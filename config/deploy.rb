@@ -28,5 +28,7 @@ task deploy: :environment do
   deploy do
     invoke :'git:clone'
     invoke :'bundle:install'
+
+    queue 'sudo bash -c "source /root/.rvm/scripts/rvm && thin -C /etc/thin/railsapp.yml restart"'
   end
 end

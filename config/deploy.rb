@@ -28,6 +28,6 @@ task deploy: :environment do
   deploy do
     invoke :'git:clone'
     invoke :'bundle:install'
-    queue 'thin restart -C deploy/thin.yml'
+    queue 'bundle exec thin restart -C deploy/thin.yml'
   end
 end

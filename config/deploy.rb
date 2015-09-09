@@ -28,6 +28,13 @@ task deploy: :environment do
   deploy do
     invoke :'git:clone'
     invoke :'bundle:install'
-    queue 'bundle exec thin restart -C deploy/thin.yml'
+
+    to :launch do
+	    queue %{
+	      echo "-----> [ Restart Thin servers ]"
+	      #{echo_cmd %[cd #{deploy_to}/current && #{bundle_bin} exec thin restart -C deploy/thin.yml]}
+	    }
+    end
+
   end
 end

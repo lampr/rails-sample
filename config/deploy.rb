@@ -32,7 +32,7 @@ task deploy: :environment do
     to :launch do
 	    queue %{
 	      echo "-----> [ Restart Thin servers ]"
-	      #{echo_cmd %[cd #{deploy_to}/current && #{bundle_bin} exec thin restart -C deploy/thin.yml]}
+	      #{echo_cmd %[#{bundle_bin} exec thin restart -C /home/relative/www-apps/mina-sample/thin_process/thin.yml]}
 	    }
     end
 

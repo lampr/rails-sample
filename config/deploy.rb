@@ -21,7 +21,7 @@ set :bundle_bin, '/home/relative/.rvm/wrappers/ruby-2.2.1@global/bundle'
 
 task :environment do
   # invoke :'rvm:load'
-  invole :'rvm:use[ruby-2.2.1]'
+  # invole :'rvm:use[ruby-2.2.1]'
 end
 
 task deploy: :environment do

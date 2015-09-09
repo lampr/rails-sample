@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'puma'
-# gem 'thin'
+# gem 'puma'
+gem 'thin'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use SCSS for stylesheets
